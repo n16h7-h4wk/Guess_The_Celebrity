@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.lang.Exception;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -59,12 +60,12 @@ public class MainActivity extends AppCompatActivity {
     public class DownloadTask extends AsyncTask<String,Void,String>{
 
         @Override
-        protected String doInBackground(String... strings) {
+        protected String doInBackground(String... strings) throws Exception {
 
             String result = "";
             URL url;
             HttpURLConnection connection = null ;
-            try {
+                
                 url = new URL(strings[0]);
                 connection = (HttpURLConnection) url.openConnection();
                 InputStream in = connection.getInputStream();
@@ -77,12 +78,6 @@ public class MainActivity extends AppCompatActivity {
 
                 return result ;
 
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
         }
     }
 
