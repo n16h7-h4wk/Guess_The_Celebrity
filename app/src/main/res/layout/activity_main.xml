@@ -60,5 +60,14 @@
             android:layout_column="0"
             android:onClick="celebChosen"
             android:text="" />
+        <Button
+            android:id="@+id/button_4"
+            android:tag="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:onClick="celebChosen"
+            android:text="" />
     </GridLayout>
 </RelativeLayout>
